@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.pixelated {
+    image-rendering: pixelated;
+}
+
+.hidden-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+#loading-div{
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+    background-color: white;
+}
+
+.hideLoading {
+    animation: hideLoading ease-in-out 0.5s;
+    animation-fill-mode: forwards; 
+}
+
+@keyframes hideLoading {
+    0% {top: 0}
+    100% {top: -100vh;}
+}
+
+.hide {
+    display: none !important;
+}
