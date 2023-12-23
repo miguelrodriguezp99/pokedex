@@ -12,6 +12,7 @@
   "dependencies": {
     "@tabler/icons-react": "^2.44.0",
     "axios": "^1.6.2",
+    "pnpm": "^8.12.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
