@@ -2,6 +2,9 @@ import { colorByStat, colorByType } from "../constants/pokemon";
 import Evolutions from "./Evolutions";
 
 const PokemonDetail = ({ pokemon }) => {
+
+	console.log("PokemonDetail");
+	console.log(pokemon);
 	return (
 		<>
 			<header className="absolute left-1/2 -translate-x-1/2 -translate-y-[92%] scale-[180%] ">
@@ -33,11 +36,11 @@ const PokemonDetail = ({ pokemon }) => {
 				<section className="grid grid-cols-2 gap-4">
 					<div className="grid gap-2">
 						<h4 className="font-bold capitalize">Height</h4>
-						<span className="bg-slate-100 block rounded-full p-1">0.7m</span>
+						<span className="bg-slate-100 block rounded-full p-1">{(pokemon?.height)/10} m</span>
 					</div>
 					<div className="grid gap-2">
 						<h4 className="font-bold capitalize">Weight</h4>
-						<span className="bg-slate-100 block rounded-full p-1">6.9kg</span>
+						<span className="bg-slate-100 block rounded-full p-1">{(pokemon?.weight)/10} kg</span>
 					</div>
 				</section>
 				{/* Habilidades */}
