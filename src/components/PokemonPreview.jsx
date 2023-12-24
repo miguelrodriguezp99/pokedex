@@ -15,9 +15,9 @@ const PokemonPreview = ({ pokemonURL, onClick }) => {
 	return (
 		<article
 			onClick={() => onClick(pokemon)}
-			className="text-center bg-white rounded-[30px] relative font-semibold capitalize pb-4 shadow-lg
-         shadow-slate-400/10 border-2 border-transparent hover:border-slate-200 cursor-pointer group grid gap-2
-		 dark:bg-[#303035] dark:text-white"
+			className="text-center bg-white rounded-[30px] relative font-semibold capitalize pb-4 shadow-lg transition-all duration-500
+        	shadow-slate-400/10 border-2 border-transparent hover:border-slate-200 cursor-pointer group grid gap-2
+		 	dark:bg-[#303035] dark:text-white"
 		>
 			<header className="h-9">
 				<img
