@@ -28,7 +28,8 @@ function App() {
 					alt=""
 				/>
 			</div>
-			<section className="bg-[#F6F8FC] h-screen font-outfit overflow-y-auto bg-[url(/pokeball-icon.png)] bg-no-repeat bg-[-10%_-20%] overflow-x-hidden dark:bg-[#000000]">
+			<section className="bg-[#F6F8FC] h-screen font-outfit overflow-y-auto bg-[url(/pokeball-icon.png)] bg-no-repeat bg-[-10%_-20%] 
+				overflow-x-hidden dark:bg-[#000000] dark:bg-[url(/pokeball-icon-dark.png)] dark:bg-no-repeat dark:bg-[-10%_-20%]">
 				<main className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_350px] ">
 					<Pokemons />
 					<Aside pokemon={pokemonDetail} isLoading={isLoading} />
