@@ -13,6 +13,15 @@ const Pokemons = () => {
 	const [pokemonName, setPokemonName] = useState("");
 	const [limit, setLimit] = useState(INITIAL_LIMIT);
 	const { setInitialPokemonLoading } = usePokemonContext();
+	const [theme, setTheme] = useState(()  => {
+
+		if(window.matchMedia('(prefers-color-scheme: dark)').matches) {
+			return "dark"
+		}
+		else{
+			return "light"
+		}
+	});
 
 	// Observer para el span del fondo para saber si se esta viendo o no
 	const targetObserver = useRef(null);
@@ -24,10 +33,13 @@ const Pokemons = () => {
 		pokemon.name.includes(pokemonName),
 	);
 
-	const toggleDarkMode = (e) => {
-		e.preventDefault();
-		const html = document.querySelector("html");
-		html.classList.toggle("dark");
+	const toggleDarkMode = () => {
+		setTheme( theme === "light" ? "dark" : "light")
+		
+	};
+
+	const handleChangePokemonName = (e) => {
+		setPokemonName(e.target.value.toLowerCase());
 	};
 
 	// USE EFFECTS ----------------------------------------------
@@ -53,9 +65,17 @@ const Pokemons = () => {
 		setLimit(INITIAL_LIMIT);
 	}, [pokemonName]);
 
-	const handleChangePokemonName = (e) => {
-		setPokemonName(e.target.value.toLowerCase());
-	};
+
+	useEffect(() => {
+		if (theme === "dark") {
+			document.querySelector("html").classList.add('dark')
+		}
+		else {
+			document.querySelector("html").classList.remove('dark')
+		}
+	}, [theme]);
+
+
 
 	return (
 		<section className="p-4 py-5">
@@ -84,11 +104,6 @@ const Pokemons = () => {
 					</button>
 
 				</div>
-
-				
-
-
-				
 			</form>
 			<PokemonList pokemons={pokemonsByNames.slice(0, limit)} />
 			{/* target observer */}

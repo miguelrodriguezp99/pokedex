@@ -3,6 +3,7 @@ import ModalPokemon from "./components/ModalPokemon";
 import Pokemons from "./components/Pokemons";
 import usePokemonContext from "./hooks/usePokemonContext";
 
+
 function App() {
 	const {
 		showDetailPokemon,
@@ -12,13 +13,12 @@ function App() {
 		initialPokemonLoading,
 	} = usePokemonContext();
 
-
 	return (
 		<>
 			{/*  */}
 			<div
 				id="loading-div"
-				className={`${initialPokemonLoading ? "hideLoading" : ""}`}
+				className={`${initialPokemonLoading ? "hideLoading" : ""} bg-white dark:bg-[#000000]`}
 			>
 				<img
 					className={`contrast-50 animate-spin-slow h-[60px] filter-brightness-80 ${

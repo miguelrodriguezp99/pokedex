@@ -15,12 +15,12 @@ const Aside = ({ pokemon, isLoading }) => {
 				className={`absolute z-20 bg-white w-full h-[85%] bottom-0 rounded-tl-3xl rounded-tr-3xl 
 			text-center grid place-content-center transition-all duration-500 ${
 				pokemon ? "left-[50vw]" : "left-0"
-			}`}
+			} dark:bg-[#18181B]`}
 			>
 				<header>
 					<img
 						src="/no-pokemon-selected.png"
-						className="absolute left-1/2 -translate-x-1/2 -translate-y-[70%] top-0 scale-90"
+						className="absolute left-1/2 -translate-x-1/2 -translate-y-[70%] top-0 scale-90 "
 					></img>
 				</header>
 				<span className="text-lg text-slate-400 px-20">
@@ -29,7 +29,7 @@ const Aside = ({ pokemon, isLoading }) => {
 			</article>
 
 			{/* LOADER */}
-			<div className="w-[80px] absolute left-1/2 -translate-x-1/2 top-1/2">
+			<div className="w-[80px] absolute left-1/2 -translate-x-1/2 top-1/2 ">
 				<img
 					className="contrast-50 animate-spin-slow"
 					src="/pokeball-icon.png"
