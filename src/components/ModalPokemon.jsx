@@ -18,7 +18,7 @@ const ModalPokemon = ({ showModal, closeModal, pokemon }) => {
 			<article
 				className={`bg-white h-[85%] absolute w-full rounded-tl-3xl rounded-tr-3xl text-center transition-all duration-500 ${
 					showModal ? "bottom-0" : "-bottom-full"
-				}`}
+				} dark:bg-[#18181B] dark:text-white`}
 			>
 				<PokemonDetail pokemon={pokemon} />
 			</article>
