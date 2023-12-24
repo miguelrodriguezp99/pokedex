@@ -6,7 +6,7 @@ const Aside = ({ pokemon, isLoading }) => {
 			<article
 				className={`absolute z-20 bg-white w-full h-[85%] bottom-0 rounded-tl-3xl rounded-tr-3xl text-center transition-all duration-500 ${
 					pokemon && !isLoading ? "left-0" : "left-[50vw]"
-				}`}
+				} dark:bg-[#18181B] dark:text-white`}
 			>
 				<PokemonDetail pokemon={pokemon} />
 			</article>

@@ -9,7 +9,7 @@ const Evolutions = ({ evolutions }) => {
 			{evolutions.map((evolution, index) => (
 				<article key={evolution.name} className="flex gap -2 items-center">
 					{index !== 0 && (
-						<div className="bg-slate-100 p-2 rounded-full text-sm font-bold">
+						<div className="bg-slate-100 p-2 rounded-full text-sm font-bold dark:text-black">
 							<span> Lv. {evolution.min_level}</span>
 						</div>
 					)}

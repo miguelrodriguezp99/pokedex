@@ -21,7 +21,7 @@ const PokemonDetail = ({ pokemon }) => {
 				<ul className="flex gap-2 justify-center">
 					{pokemon?.types.map((type) => (
 						<li
-							className={`p-1 rounded-md px-2 text-white text-sm ${colorByType[type]}`}
+							className={`p-1 rounded-md px-2 text-white text-sm ${colorByType[type]} capitalize`}
 							key={type}
 						>
 							{type}
@@ -36,17 +36,17 @@ const PokemonDetail = ({ pokemon }) => {
 				<section className="grid grid-cols-2 gap-4">
 					<div className="grid gap-2">
 						<h4 className="font-bold capitalize">Height</h4>
-						<span className="bg-slate-100 block rounded-full p-1">{(pokemon?.height)/10} m</span>
+						<span className="bg-slate-100 block rounded-full p-1 dark:text-black">{(pokemon?.height)/10} m</span>
 					</div>
 					<div className="grid gap-2">
 						<h4 className="font-bold capitalize">Weight</h4>
-						<span className="bg-slate-100 block rounded-full p-1">{(pokemon?.weight)/10} kg</span>
+						<span className="bg-slate-100 block rounded-full p-1 dark:text-black">{(pokemon?.weight)/10} kg</span>
 					</div>
 				</section>
 				{/* Habilidades */}
 				<section className="grid gap-2">
 					<h4 className="font-bold capitalize">Abilities</h4>
-					<ul className="grid grid-cols-2 gap-4">
+					<ul className="grid grid-cols-2 gap-4 dark:text-black">
 						{pokemon?.abilities.map((ability) => (
 							<li
 								key={ability}
@@ -67,11 +67,11 @@ const PokemonDetail = ({ pokemon }) => {
 								key={stat.name}
 							>
 								<div className="bg-green-500 rounded-full w-[26px] aspect-square grid place-content-center">
-									<span className="text-[10px] text-white font-semibold">
+									<span className="text-[10px] text-white font-semibold dark:text-black">
 										{stat.name}
 									</span>
 								</div>
-								<span className="font-bold text-xs">{stat.base_stat}</span>
+								<span className="font-bold text-xs dark:text-black">{stat.base_stat}</span>
 							</li>
 						))}
 					</ul>

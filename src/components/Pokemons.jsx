@@ -1,4 +1,4 @@
-import { IconSearch } from "@tabler/icons-react";
+import { IconMoon, IconSearch } from "@tabler/icons-react";
 import axios from "axios";
 import { useEffect, useRef, useState } from "react";
 import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
@@ -23,6 +23,12 @@ const Pokemons = () => {
 	const pokemonsByNames = allPokemons.filter((pokemon) =>
 		pokemon.name.includes(pokemonName),
 	);
+
+	const toggleDarkMode = (e) => {
+		e.preventDefault();
+		const html = document.querySelector("html");
+		html.classList.toggle("dark");
+	};
 
 	// USE EFFECTS ----------------------------------------------
 	useEffect(() => {
@@ -54,9 +60,9 @@ const Pokemons = () => {
 	return (
 		<section className="p-4 py-5">
 			<form>
-				<div className="bg-white p-4 flex rounded-2xl text-lg">
+				<div className="p-4 flex rounded-2xl text-lg">
 					<input
-						className="outline-none flex-1"
+						className="outline-none flex-1 rounded-2xl p-3 dark:bg-[#18181B]"
 						type="text"
 						placeholder="Search your pokemon"
 						name="pokemonName"
@@ -65,11 +71,24 @@ const Pokemons = () => {
 					/>
 					<button
 						type="button"
-						className="bg-red-500 p-2 rounded-xl shadow-lg shadow-red-500/50 hover:bg-red-400 transition-colors"
+						className="bg-red-500 p-3 rounded-xl shadow-lg shadow-red-500/50 hover:bg-red-400 transition-colors ml-2"
 					>
 						<IconSearch color="white" stroke={3} />
 					</button>
+
+					<button
+						type="button"
+						className="bg-blue-500 p-3 rounded-xl shadow-lg shadow-blue-500/50 hover:bg-blue-400 transition-colors ml-2"
+						onClick={(e) => toggleDarkMode(e)}>
+						<IconMoon color="white" stroke={2} className=""/>	
+					</button>
+
 				</div>
+
+				
+
+
+				
 			</form>
 			<PokemonList pokemons={pokemonsByNames.slice(0, limit)} />
 			{/* target observer */}
