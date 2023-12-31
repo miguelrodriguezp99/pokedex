@@ -82,7 +82,7 @@ const Pokemons = () => {
 			<form>
 				<div className="p-4 flex rounded-2xl text-lg">
 					<input
-						className="outline-none flex-1 rounded-2xl p-3 dark:bg-[#18181B] dark:text-white"
+						className="w-full outline-none flex-1 rounded-2xl p-3 dark:bg-[#18181B] dark:text-white "
 						type="text"
 						placeholder="Search your pokemon"
 						name="pokemonName"
@@ -102,7 +102,6 @@ const Pokemons = () => {
 						onClick={(e) => toggleDarkMode(e)}>
 						<IconMoon color="white" stroke={2} className=""/>	
 					</button>
-
 				</div>
 			</form>
 			<PokemonList pokemons={pokemonsByNames.slice(0, limit)} />
